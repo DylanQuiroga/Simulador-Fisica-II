@@ -1,4 +1,3 @@
-from cProfile import label
 from tkinter import Tk, Label, Button, PhotoImage, ttk
 from tkinter import *
 import tkinter as TK
@@ -491,11 +490,21 @@ def calculoColorResistencia6Colores():
     Button(nuevaVentana,text='Aceptar',command=lambda: Calcular6resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,listaDesplegable3,listaDesplegable4,listaDesplegable5,nuevaVentana)).place(x=20,y=80)
 
 
-def CalculoRSerieParalelo():
+def CalculoRSerie():
     print('Boton 1')
     nuevaVentana = TK.Toplevel(ventana)
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de resistencia en serie/paralelo')
+
+    Label(nuevaVentana, text = "Resistencia 1").place(x=20,y=20)
+    Resistencia1 = ttk.Entry(nuevaVentana)
+    Resistencia1.place(x=100,y=20)
+    Label(nuevaVentana, text= "Resistencia 2").place(x=320,y=20)
+    Resistencia2 = ttk.Entry(nuevaVentana)
+    Resistencia2.place(x=400,y=20)
+
+def CalculoRParalelo():
+    print("Boton 1.5")
 
 def ResistividadMaterial():
     print('Boton 2')
@@ -519,6 +528,13 @@ def Opcion1():
     Button(nuevaVentana, text='Cinco colores', command=calculoColorResistencia5Colores).pack(pady=15)
     Button(nuevaVentana, text='Seis colores', command=calculoColorResistencia6Colores).pack(pady=15)
 
+def Opcion2():
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.geometry('300x200')
+    nuevaVentana.title('Seleccione una opción')
+
+    Button(nuevaVentana, text='Resistencia en serie', command=CalculoRSerie).pack(pady=15)
+    Button(nuevaVentana, text='Resistencia en paralelo', command=CalculoRParalelo).pack(pady=15)
 
 # Inicio del programa -> creacion de la ventana
 ventana = Tk()
@@ -531,7 +547,7 @@ lbl.pack()
 #creacion de los botones
 btn = Button(ventana, text='Calculo de los colores de la resistencia', command=Opcion1)
 btn.pack(pady=20)
-btn1 = Button(ventana, text='Calculo de resistencia en serio/paralelo',command=CalculoRSerieParalelo)
+btn1 = Button(ventana, text='Calculo de resistencia en serio/paralelo',command=Opcion2)
 btn1.pack(pady=20)
 btn2= Button(ventana, text='Calculo de la resistividad de un material', command= ResistividadMaterial)
 btn2.pack(pady=20)
