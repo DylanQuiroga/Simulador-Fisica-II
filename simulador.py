@@ -489,22 +489,153 @@ def calculoColorResistencia6Colores():
 
     Button(nuevaVentana,text='Aceptar',command=lambda: Calcular6resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,listaDesplegable3,listaDesplegable4,listaDesplegable5,nuevaVentana)).place(x=20,y=80)
 
+def CalcularRSerie(Resistencia1,Resistencia2,Resistencia3,Resistencia4,Resistencia5,Resistencia6,Resistencia7,Resistencia8,Resistencia9,Resistencia10, nuevaVentana):
+    Label(nuevaVentana, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=80,y=180)
+    Resultado = int(Resistencia1.get())+int(Resistencia2.get())+int(Resistencia3.get())+int(Resistencia4.get())+int(Resistencia5.get())+int(Resistencia6.get())+int(Resistencia7.get())+int(Resistencia8.get())+int(Resistencia9.get())+int(Resistencia10.get())
+    print(Resultado)
+    Label(nuevaVentana,text="El valor de la resistencia es").place(x=100,y=180)
+    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="[Ω]").place(x=400,y=180)
 
 def CalculoRSerie():
     print('Boton 1')
+    
     nuevaVentana = TK.Toplevel(ventana)
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de resistencia en serie/paralelo')
 
+    R1 = TK.IntVar()
+    R2 = TK.IntVar()
+    R3 = TK.IntVar()
+    R4 = TK.IntVar()
+    R5 = TK.IntVar()
+    R6 = TK.IntVar()
+    R7 = TK.IntVar()
+    R8 = TK.IntVar()
+    R9 = TK.IntVar()
+    R10 = TK.IntVar()
+
     Label(nuevaVentana, text = "Resistencia 1").place(x=20,y=20)
-    Resistencia1 = ttk.Entry(nuevaVentana)
-    Resistencia1.place(x=100,y=20)
+    TK.Entry(nuevaVentana, textvariable=R1).place(x=100,y=20)
     Label(nuevaVentana, text= "Resistencia 2").place(x=320,y=20)
-    Resistencia2 = ttk.Entry(nuevaVentana)
-    Resistencia2.place(x=400,y=20)
+    TK.Entry(nuevaVentana, textvariable=R2).place(x=400,y=20)
+    Label(nuevaVentana, text= "Resistencia 3").place(x=20, y=50)
+    TK.Entry(nuevaVentana, textvariable=R3).place(x=100,y=50)
+    Label(nuevaVentana, text="Resistencia 4").place(x=320,y=50)
+    TK.Entry(nuevaVentana, textvariable=R4).place(x=400,y=50)
+    Label(nuevaVentana, text="Resistencia 5").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=R5).place(x=100,y=80)
+    Label(nuevaVentana, text="Resistencia 6").place(x=320,y=80)
+    TK.Entry(nuevaVentana, textvariable=R6).place(x=400,y=80)
+    Label(nuevaVentana, text="Resistencia 7").place(x=20,y=110)
+    TK.Entry(nuevaVentana, textvariable=R7).place(x=100,y=110)
+    Label(nuevaVentana, text="Resistencia 8").place(x=320,y=110)
+    TK.Entry(nuevaVentana, textvariable=R8).place(x=400,y=110)
+    Label(nuevaVentana, text="Resistencia 9").place(x=20,y=140)
+    TK.Entry(nuevaVentana, textvariable=R9).place(x=100,y=140)
+    Label(nuevaVentana, text="Resistencia 10").place(x=320,y=140)
+    TK.Entry(nuevaVentana, textvariable=R10).place(x=400,y=140)
+
+    Button(nuevaVentana, text="Calcular", command=lambda:CalcularRSerie(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,nuevaVentana)).place(x=20,y=180)
+
+def CalcularRParalelo(Resistencia1,Resistencia2,Resistencia3,Resistencia4,Resistencia5,Resistencia6,Resistencia7,Resistencia8,Resistencia9,Resistencia10, nuevaVentana):
+
+    if int(Resistencia1.get()) == 0:
+        res1 = 0
+    else:
+        res1 = 1/int(Resistencia1.get())
+
+    if int(Resistencia2.get()) == 0:
+        res2 = 0
+    else:
+        res2 = 1/int(Resistencia2.get())
+
+    if int(Resistencia3.get()) == 0:
+        res3 = 0
+    else:
+        res3 = 1/int(Resistencia3.get())
+
+    if int(Resistencia4.get()) == 0:
+        res4 = 0
+    else:
+        res4 = 1/int(Resistencia4.get())
+
+    if int(Resistencia5.get()) == 0:
+        res5 = 0
+    else:
+        res5 = 1/int(Resistencia5.get())
+
+    if int(Resistencia6.get()) == 0:
+        res6 = 0
+    else:
+        res6 = 1/int(Resistencia6.get())
+
+    if int(Resistencia7.get()) == 0:
+        res7 = 0
+    else:
+        res7 = 1/int(Resistencia7.get())
+
+    if int(Resistencia8.get()) == 0:
+        res8 = 0
+    else:
+        res8 = 1/int(Resistencia8.get())
+
+    if int(Resistencia9.get()) == 0:
+        res9 = 0
+    else:
+        res9 = 1/int(Resistencia9.get())
+
+    if int(Resistencia10.get()) == 0:
+        res10 = 0
+    else:
+        res10 = 1/int(Resistencia10.get())
+
+    Label(nuevaVentana, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=80,y=180)
+    Resultado = 1/(res1+res2+res3+res4+res5+res6+res7+res8+res9+res10)
+    print(Resultado)
+    Label(nuevaVentana,text="El valor de la resistencia es").place(x=100,y=180)
+    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="[Ω]").place(x=400,y=180)
 
 def CalculoRParalelo():
     print("Boton 1.5")
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.geometry('640x480')
+    nuevaVentana.title('Calculo de resistencia en serie/paralelo')
+
+    R1 = TK.IntVar()
+    R2 = TK.IntVar()
+    R3 = TK.IntVar()
+    R4 = TK.IntVar()
+    R5 = TK.IntVar()
+    R6 = TK.IntVar()
+    R7 = TK.IntVar()
+    R8 = TK.IntVar()
+    R9 = TK.IntVar()
+    R10 = TK.IntVar()
+
+    Label(nuevaVentana, text = "Resistencia 1").place(x=20,y=20)
+    TK.Entry(nuevaVentana, textvariable=R1).place(x=100,y=20)
+    Label(nuevaVentana, text= "Resistencia 2").place(x=320,y=20)
+    TK.Entry(nuevaVentana, textvariable=R2).place(x=400,y=20)
+    Label(nuevaVentana, text= "Resistencia 3").place(x=20, y=50)
+    TK.Entry(nuevaVentana, textvariable=R3).place(x=100,y=50)
+    Label(nuevaVentana, text="Resistencia 4").place(x=320,y=50)
+    TK.Entry(nuevaVentana, textvariable=R4).place(x=400,y=50)
+    Label(nuevaVentana, text="Resistencia 5").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=R5).place(x=100,y=80)
+    Label(nuevaVentana, text="Resistencia 6").place(x=320,y=80)
+    TK.Entry(nuevaVentana, textvariable=R6).place(x=400,y=80)
+    Label(nuevaVentana, text="Resistencia 7").place(x=20,y=110)
+    TK.Entry(nuevaVentana, textvariable=R7).place(x=100,y=110)
+    Label(nuevaVentana, text="Resistencia 8").place(x=320,y=110)
+    TK.Entry(nuevaVentana, textvariable=R8).place(x=400,y=110)
+    Label(nuevaVentana, text="Resistencia 9").place(x=20,y=140)
+    TK.Entry(nuevaVentana, textvariable=R9).place(x=100,y=140)
+    Label(nuevaVentana, text="Resistencia 10").place(x=320,y=140)
+    TK.Entry(nuevaVentana, textvariable=R10).place(x=400,y=140)
+
+    Button(nuevaVentana, text="Calcular", command=lambda:CalcularRParalelo(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,nuevaVentana)).place(x=20,y=180)
 
 def ResistividadMaterial():
     print('Boton 2')
