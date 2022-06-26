@@ -637,18 +637,160 @@ def CalculoRParalelo():
 
     Button(nuevaVentana, text="Calcular", command=lambda:CalcularRParalelo(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,nuevaVentana)).place(x=20,y=180)
 
+def CalcularCapacidadSerie(Capacidad1,Capacidad2, Capacidad3, Capacidad4, Capacidad5, Capacidad6, Capacidad7, Capacidad8, Capacidad9, Capacidad10, nuevaVentana):
+    
+    if int(Capacidad1.get()) == 0:
+        Cap1 = 0
+    else:
+        Cap1 = 1/int(Capacidad1.get())
+
+    if int(Capacidad2.get()) == 0:
+        Cap2 = 0
+    else:
+        Cap2 = 1/int(Capacidad2.get())
+
+    if int(Capacidad3.get()) == 0:
+        Cap3 = 0
+    else:
+        Cap3 = 1/int(Capacidad3.get())
+
+    if int(Capacidad4.get()) == 0:
+        Cap4 = 0
+    else:
+        Cap4 = 1/int(Capacidad4.get())
+
+    if int(Capacidad5.get()) == 0:
+        Cap5 = 0
+    else:
+        Cap5 = 1/int(Capacidad5.get())
+
+    if int(Capacidad6.get()) == 0:
+        Cap6 = 0
+    else:
+        Cap6 = 1/int(Capacidad6.get())
+
+    if int(Capacidad7.get()) == 0:
+        Cap7 = 0
+    else:
+        Cap7 = 1/int(Capacidad7.get())
+
+    if int(Capacidad8.get()) == 0:
+        Cap8 = 0
+    else:
+        Cap8 = 1/int(Capacidad8.get())
+
+    if int(Capacidad9.get()) == 0:
+        Cap9 = 0
+    else:
+        Cap9 = 1/int(Capacidad9.get())
+
+    if int(Capacidad10.get()) == 0:
+        Cap10 = 0
+    else:
+        Cap10 = 1/int(Capacidad10.get())
+
+    Label(nuevaVentana, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=80,y=180)
+    Resultado = 1/(Cap1+Cap2+Cap3+Cap4+Cap5+Cap6+Cap7+Cap8+Cap9+Cap10)
+    print(Resultado)
+    Label(nuevaVentana,text="La capacidad equivalente es").place(x=100,y=180)
+    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="[μF]").place(x=400,y=180)
+
+def CalculoCapacidadSerie():
+    
+    print("Boton 1.5")
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.geometry('640x480')
+    nuevaVentana.title('Calculo de capacidad equivalente condensadores en serie')
+
+    C1 = TK.IntVar()
+    C2 = TK.IntVar()
+    C3 = TK.IntVar()
+    C4 = TK.IntVar()
+    C5 = TK.IntVar()
+    C6 = TK.IntVar()
+    C7 = TK.IntVar()
+    C8 = TK.IntVar()
+    C9 = TK.IntVar()
+    C10 = TK.IntVar()
+
+    Label(nuevaVentana, text = "Capacidad 1").place(x=20,y=20)
+    TK.Entry(nuevaVentana, textvariable=C1).place(x=100,y=20)
+    Label(nuevaVentana, text= "Capacidad 2").place(x=320,y=20)
+    TK.Entry(nuevaVentana, textvariable=C2).place(x=400,y=20)
+    Label(nuevaVentana, text= "Capacidad 3").place(x=20, y=50)
+    TK.Entry(nuevaVentana, textvariable=C3).place(x=100,y=50)
+    Label(nuevaVentana, text="Capacidad 4").place(x=320,y=50)
+    TK.Entry(nuevaVentana, textvariable=C4).place(x=400,y=50)
+    Label(nuevaVentana, text="Capacidad 5").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=C5).place(x=100,y=80)
+    Label(nuevaVentana, text="Capacidad 6").place(x=320,y=80)
+    TK.Entry(nuevaVentana, textvariable=C6).place(x=400,y=80)
+    Label(nuevaVentana, text="Capacidad 7").place(x=20,y=110)
+    TK.Entry(nuevaVentana, textvariable=C7).place(x=100,y=110)
+    Label(nuevaVentana, text="Capacidad 8").place(x=320,y=110)
+    TK.Entry(nuevaVentana, textvariable=C8).place(x=400,y=110)
+    Label(nuevaVentana, text="Capacidad 9").place(x=20,y=140)
+    TK.Entry(nuevaVentana, textvariable=C9).place(x=100,y=140)
+    Label(nuevaVentana, text="Capacidad 10").place(x=320,y=140)
+    TK.Entry(nuevaVentana, textvariable=C10).place(x=400,y=140)
+
+    Button(nuevaVentana, text="Calcular", command=lambda:CalcularCapacidadSerie(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,nuevaVentana)).place(x=20,y=180)
+    
+
+def CalcularCapacidadParalelo(Capacidad1,Capacidad2, Capacidad3, Capacidad4, Capacidad5, Capacidad6, Capacidad7, Capacidad8, Capacidad9, Capacidad10, nuevaVentana):
+    Label(nuevaVentana, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=80,y=180)
+    Resultado = int(Capacidad1.get())+int(Capacidad2.get())+int(Capacidad3.get())+int(Capacidad4.get())+int(Capacidad5.get())+int(Capacidad6.get())+int(Capacidad7.get())+int(Capacidad8.get())+int(Capacidad9.get())+int(Capacidad10.get())
+    print(Resultado)
+    Label(nuevaVentana,text="El capacidad equivalente es").place(x=100,y=180)
+    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="[μF]").place(x=400,y=180)
+
+def CalculoCapacidadParalelo():
+    print("Boton 1")
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.geometry('640x480')
+    nuevaVentana.title('Calculo de capacidad equivalente condensadores en paralelo')
+
+    C1 = TK.IntVar()
+    C2 = TK.IntVar()
+    C3 = TK.IntVar()
+    C4 = TK.IntVar()
+    C5 = TK.IntVar()
+    C6 = TK.IntVar()
+    C7 = TK.IntVar()
+    C8 = TK.IntVar()
+    C9 = TK.IntVar()
+    C10 = TK.IntVar()
+
+    Label(nuevaVentana, text = "Capacidad 1").place(x=20,y=20)
+    TK.Entry(nuevaVentana, textvariable=C1).place(x=100,y=20)
+    Label(nuevaVentana, text= "Capacidad 2").place(x=320,y=20)
+    TK.Entry(nuevaVentana, textvariable=C2).place(x=400,y=20)
+    Label(nuevaVentana, text= "Capacidad 3").place(x=20, y=50)
+    TK.Entry(nuevaVentana, textvariable=C3).place(x=100,y=50)
+    Label(nuevaVentana, text="Capacidad 4").place(x=320,y=50)
+    TK.Entry(nuevaVentana, textvariable=C4).place(x=400,y=50)
+    Label(nuevaVentana, text="Capacidad 5").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=C5).place(x=100,y=80)
+    Label(nuevaVentana, text="Capacidad 6").place(x=320,y=80)
+    TK.Entry(nuevaVentana, textvariable=C6).place(x=400,y=80)
+    Label(nuevaVentana, text="Capacidad 7").place(x=20,y=110)
+    TK.Entry(nuevaVentana, textvariable=C7).place(x=100,y=110)
+    Label(nuevaVentana, text="Capacidad 8").place(x=320,y=110)
+    TK.Entry(nuevaVentana, textvariable=C8).place(x=400,y=110)
+    Label(nuevaVentana, text="Capacidad 9").place(x=20,y=140)
+    TK.Entry(nuevaVentana, textvariable=C9).place(x=100,y=140)
+    Label(nuevaVentana, text="Capacidad 10").place(x=320,y=140)
+    TK.Entry(nuevaVentana, textvariable=C10).place(x=400,y=140)
+
+    Button(nuevaVentana, text="Calcular", command=lambda:CalcularCapacidadParalelo(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,nuevaVentana)).place(x=20,y=180)
+       
 def ResistividadMaterial():
     print('Boton 2')
     nuevaVentana = TK.Toplevel(ventana)
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de la resistividad de un material')
-
-def CapacitorSerieParalelo():
-    print('Boton 3')
-    nuevaVentana = TK.Toplevel(ventana)
-    nuevaVentana.geometry('640x480')
-    nuevaVentana.title('Calculo de capacitor en serie/paralelo')
-
 
 def Opcion1():
     nuevaVentana = TK.Toplevel(ventana)
@@ -667,6 +809,14 @@ def Opcion2():
     Button(nuevaVentana, text='Resistencia en serie', command=CalculoRSerie).pack(pady=15)
     Button(nuevaVentana, text='Resistencia en paralelo', command=CalculoRParalelo).pack(pady=15)
 
+def Opcion4():
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.geometry('300x200')
+    nuevaVentana.title('Seleccione una opción')
+
+    Button(nuevaVentana, text='Condensadores en serie', command=CalculoCapacidadSerie).pack(pady=15)
+    Button(nuevaVentana, text='Condensadores en paralelo', command=CalculoCapacidadParalelo).pack(pady=15)
+
 # Inicio del programa -> creacion de la ventana
 ventana = Tk()
 ventana.geometry('640x480')
@@ -678,11 +828,11 @@ lbl.pack()
 #creacion de los botones
 btn = Button(ventana, text='Calculo de los colores de la resistencia', command=Opcion1)
 btn.pack(pady=20)
-btn1 = Button(ventana, text='Calculo de resistencia en serio/paralelo',command=Opcion2)
+btn1 = Button(ventana, text='Calculo de resistencia equivalente en serio/paralelo',command=Opcion2)
 btn1.pack(pady=20)
 btn2= Button(ventana, text='Calculo de la resistividad de un material', command= ResistividadMaterial)
 btn2.pack(pady=20)
-btn3 = Button(ventana, text= 'Calculo de capacitor serie/paralelo', command=CapacitorSerieParalelo)
+btn3 = Button(ventana, text= 'Calculo de capacidad equivalente condensador', command=Opcion4)
 btn3.pack(pady=20)
 
 #importa el logo del dep. de fisica
