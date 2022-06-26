@@ -102,6 +102,8 @@ def calculoColorResistencia4Colores():
     print('Boton')
 
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('860x480')
     nuevaVentana.title('Calculo de los colores de la resistencia')
 
@@ -137,6 +139,9 @@ def calculoColorResistencia4Colores():
     listaDesplegable1['values'] = opciones
     listaDesplegable2['values'] = opcionesMult
     listaDesplegable3['values'] = opcionesTole
+
+    Label(nuevaVentana, image=img1).place(x=170,y=150)
+    Label(nuevaVentana, text="NOTA: La resistencia se lee de izquierda a derecha, en la imagen de referencia, el verde es el primer color y el dorado el cuarto color").place(x=20,y=300)
 
     Button(nuevaVentana,text='Aceptar',command=lambda: Calcular4resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,listaDesplegable3,nuevaVentana)).place(x=20,y=80)
 
@@ -260,6 +265,8 @@ def Calcular5resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,li
 def calculoColorResistencia5Colores():
     print('Boton 5 resitencia')
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('860x480')
     nuevaVentana.title('Calculo de los colores de la resistencia')
 
@@ -301,6 +308,9 @@ def calculoColorResistencia5Colores():
     listaDesplegable2['values'] = opciones
     listaDesplegable3['values'] = opcionesMult
     listaDesplegable4['values'] = opcionesTole
+
+    Label(nuevaVentana, image=img2).place(x=170,y=150)
+    Label(nuevaVentana, text="NOTA: La resistencia se lee de izquierda a derecha, en la imagen de referencia, el rojo es el primer color y el marrón el cuarto color").place(x=20,y=300)
 
     Button(nuevaVentana,text='Aceptar',command=lambda: Calcular5resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,listaDesplegable3,listaDesplegable4,nuevaVentana)).place(x=20,y=80)
 
@@ -438,6 +448,8 @@ def Calcular6resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,li
 def calculoColorResistencia6Colores():
     print('Boton 6 resitencia')
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('860x480')
     nuevaVentana.title('Calculo de los colores de la resistencia')
 
@@ -487,6 +499,9 @@ def calculoColorResistencia6Colores():
     listaDesplegable4['values'] = opcionesTole
     listaDesplegable5['values'] = opcionesPPM
 
+    Label(nuevaVentana, image=img3).place(x=170,y=150)
+    Label(nuevaVentana, text="NOTA: La resistencia se lee de izquierda a derecha, en la imagen de referencia, el rojo es el primer color y el violeta el cuarto color").place(x=20,y=300)
+
     Button(nuevaVentana,text='Aceptar',command=lambda: Calcular6resistencia(listaDesplegable,listaDesplegable1,listaDesplegable2,listaDesplegable3,listaDesplegable4,listaDesplegable5,nuevaVentana)).place(x=20,y=80)
 
 def CalcularRSerie(Resistencia1,Resistencia2,Resistencia3,Resistencia4,Resistencia5,Resistencia6,Resistencia7,Resistencia8,Resistencia9,Resistencia10, nuevaVentana):
@@ -501,8 +516,10 @@ def CalculoRSerie():
     print('Boton 1')
     
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('640x480')
-    nuevaVentana.title('Calculo de resistencia en serie/paralelo')
+    nuevaVentana.title('Calculo de resistencia en serie')
 
     R1 = TK.IntVar()
     R2 = TK.IntVar()
@@ -535,6 +552,9 @@ def CalculoRSerie():
     TK.Entry(nuevaVentana, textvariable=R9).place(x=100,y=140)
     Label(nuevaVentana, text="Resistencia 10").place(x=320,y=140)
     TK.Entry(nuevaVentana, textvariable=R10).place(x=400,y=140)
+
+    Label(nuevaVentana, image=img4).place(x=190,y=300)
+    Label(nuevaVentana, image=img8).place(x=130,y=230)
 
     Button(nuevaVentana, text="Calcular", command=lambda:CalcularRSerie(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,nuevaVentana)).place(x=20,y=180)
 
@@ -600,8 +620,10 @@ def CalcularRParalelo(Resistencia1,Resistencia2,Resistencia3,Resistencia4,Resist
 def CalculoRParalelo():
     print("Boton 1.5")
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('640x480')
-    nuevaVentana.title('Calculo de resistencia en serie/paralelo')
+    nuevaVentana.title('Calculo de resistencia en paralelo')
 
     R1 = TK.IntVar()
     R2 = TK.IntVar()
@@ -634,6 +656,9 @@ def CalculoRParalelo():
     TK.Entry(nuevaVentana, textvariable=R9).place(x=100,y=140)
     Label(nuevaVentana, text="Resistencia 10").place(x=320,y=140)
     TK.Entry(nuevaVentana, textvariable=R10).place(x=400,y=140)
+
+    Label(nuevaVentana, image=img5).place(x=190,y=310)
+    Label(nuevaVentana, image=img9).place(x=130,y=200)
 
     Button(nuevaVentana, text="Calcular", command=lambda:CalcularRParalelo(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,nuevaVentana)).place(x=20,y=180)
 
@@ -700,6 +725,8 @@ def CalculoCapacidadSerie():
     
     print("Boton 1.5")
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de capacidad equivalente condensadores en serie')
 
@@ -735,6 +762,9 @@ def CalculoCapacidadSerie():
     Label(nuevaVentana, text="Capacidad 10").place(x=320,y=140)
     TK.Entry(nuevaVentana, textvariable=C10).place(x=400,y=140)
 
+    Label(nuevaVentana, image=img6).place(x=190,y=330)
+    Label(nuevaVentana, image=img10).place(x=130,y=200)
+
     Button(nuevaVentana, text="Calcular", command=lambda:CalcularCapacidadSerie(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,nuevaVentana)).place(x=20,y=180)
     
 
@@ -746,9 +776,50 @@ def CalcularCapacidadParalelo(Capacidad1,Capacidad2, Capacidad3, Capacidad4, Cap
     Label(nuevaVentana,text=Resultado).place(x=300,y=180)
     Label(nuevaVentana,text="[μF]").place(x=400,y=180)
 
+def calculoresistenciaMaterial(RM,LM,AM,NV):
+    Label(NV, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=100,y=120)
+    division = (float(LM.get()))/(float(AM.get()))
+    resultado = float(RM.get())*division
+
+    print(division)
+    print(resultado)
+
+    Label(NV, text= "La resistencia del material es ").place(x=90,y=120)
+    Label(NV, text= resultado).place(x=350,y=120)
+    Label(NV, text="[Ω]").place(x=450,y=120)
+
+def ResistenciaMaterial():
+    print('Boton 2')
+    nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
+    nuevaVentana.geometry('640x480')
+    nuevaVentana.title('Calculo de la resistencia de un material')
+
+    resistividadMaterial = TK.DoubleVar()
+    largoMaterial = TK.DoubleVar()
+    areaMaterial = TK.DoubleVar()
+
+    Label(nuevaVentana, text= "Resistividad del material").place(x=20,y=20)
+    TK.Entry(nuevaVentana,textvariable=resistividadMaterial).place(x=170, y=20)
+    Label(nuevaVentana, text="Longitud del objeto").place(x=20,y=50)
+    TK.Entry(nuevaVentana, textvariable=largoMaterial).place(x=170,y=50)
+    Label(nuevaVentana, text="Area del objeto").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=areaMaterial).place(x=170,y=80)
+
+    Label(nuevaVentana, image=img12).place(x=270,y=165)
+    Label(nuevaVentana, text="R = Resistencia").place(x=20,y=180)
+    Label(nuevaVentana, text="p = Resistividad o cte. de proporcionalidad").place(x=20,y=210)
+    Label(nuevaVentana, text="L = Longitud").place(x=20,y=240)
+    Label(nuevaVentana, text="A = Area").place(x=20,y=270)
+
+    Button(nuevaVentana, text = "Calcular", command=lambda: calculoresistenciaMaterial(resistividadMaterial,largoMaterial,areaMaterial,nuevaVentana)).place(x=20,y=120)
+
 def CalculoCapacidadParalelo():
     print("Boton 1")
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de capacidad equivalente condensadores en paralelo')
 
@@ -784,16 +855,54 @@ def CalculoCapacidadParalelo():
     Label(nuevaVentana, text="Capacidad 10").place(x=320,y=140)
     TK.Entry(nuevaVentana, textvariable=C10).place(x=400,y=140)
 
+    Label(nuevaVentana, image=img7).place(x=170,y=280)
+    Label(nuevaVentana, image=img11).place(x=130,y=200)
+
     Button(nuevaVentana, text="Calcular", command=lambda:CalcularCapacidadParalelo(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,nuevaVentana)).place(x=20,y=180)
        
+def calculoresistividadMaterial(RM,LM,AM,NV):
+    Label(NV, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=100,y=120)
+    multiplicacion = int(RM.get())*float(AM.get())
+    resultado = multiplicacion/float(LM.get())
+
+    print(multiplicacion)
+    print(resultado)
+
+    Label(NV, text= "La resistividad del material es ").place(x=90,y=120)
+    Label(NV, text= resultado).place(x=350,y=120)
+    Label(NV, text="[Ω*m]").place(x=450,y=120)
+
 def ResistividadMaterial():
     print('Boton 2')
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de la resistividad de un material')
 
+    resistenciaMaterial = TK.IntVar()
+    largoMaterial = TK.DoubleVar()
+    areaMaterial = TK.DoubleVar()
+
+    Label(nuevaVentana, text= "Resistencia del material").place(x=20,y=20)
+    TK.Entry(nuevaVentana,textvariable=resistenciaMaterial).place(x=170, y=20)
+    Label(nuevaVentana, text="Longitud del objeto").place(x=20,y=50)
+    TK.Entry(nuevaVentana, textvariable=largoMaterial).place(x=170,y=50)
+    Label(nuevaVentana, text="Area del objeto").place(x=20,y=80)
+    TK.Entry(nuevaVentana, textvariable=areaMaterial).place(x=170,y=80)
+
+    Label(nuevaVentana, image=img13).place(x=270,y=165)
+    Label(nuevaVentana, text="p = Resistividad o cte. de proporcionalidad").place(x=20,y=180)
+    Label(nuevaVentana, text="R = Resistencia").place(x=20,y=210)
+    Label(nuevaVentana, text="A = Area").place(x=20,y=240)
+    Label(nuevaVentana, text="L = Longitud").place(x=20,y=270)
+
+    Button(nuevaVentana, text = "Calcular", command=lambda: calculoresistividadMaterial(resistenciaMaterial,largoMaterial,areaMaterial,nuevaVentana)).place(x=20,y=120)
+
 def Opcion1():
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('300x200')
     nuevaVentana.title('Seleccione una opción')
 
@@ -803,14 +912,18 @@ def Opcion1():
 
 def Opcion2():
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('300x200')
     nuevaVentana.title('Seleccione una opción')
 
     Button(nuevaVentana, text='Resistencia en serie', command=CalculoRSerie).pack(pady=15)
-    Button(nuevaVentana, text='Resistencia en paralelo', command=CalculoRParalelo).pack(pady=15)
+    Button(nuevaVentana, text='Resistencia en paralelo', command=CalculoRParalelo).pack(pady=15) 
 
 def Opcion4():
     nuevaVentana = TK.Toplevel(ventana)
+    nuevaVentana.resizable(0,0)
+    nuevaVentana.iconphoto(False, PhotoImage(file='icon.png'))
     nuevaVentana.geometry('300x200')
     nuevaVentana.title('Seleccione una opción')
 
@@ -821,6 +934,8 @@ def Opcion4():
 ventana = Tk()
 ventana.geometry('640x480')
 ventana.title('Simulador Circuito')
+ventana.resizable(0,0)
+ventana.iconphoto(False, PhotoImage(file='icon.png'))
 
 lbl = Label(ventana, text='Menu')
 lbl.pack()
@@ -830,13 +945,29 @@ btn = Button(ventana, text='Calculo de los colores de la resistencia', command=O
 btn.pack(pady=20)
 btn1 = Button(ventana, text='Calculo de resistencia equivalente en serio/paralelo',command=Opcion2)
 btn1.pack(pady=20)
-btn2= Button(ventana, text='Calculo de la resistividad de un material', command= ResistividadMaterial)
+btn2= Button(ventana, text='Calculo de la resistencia de un material', command= ResistenciaMaterial)
 btn2.pack(pady=20)
+btn4 = Button(ventana, text ="Calculo de la resistividad de un material", command = ResistividadMaterial)
+btn4.pack(pady=20)
 btn3 = Button(ventana, text= 'Calculo de capacidad equivalente condensador', command=Opcion4)
 btn3.pack(pady=20)
 
-#importa el logo del dep. de fisica
+#importa el logo del dep. de fisica y otras
 img = PhotoImage(file='dfuls-logo.png')
+img1 = PhotoImage(file = 'resistencia-4-bandas.png')
+img2= PhotoImage(file = 'resistencia-5-bandas.png')
+img3= PhotoImage(file= 'resistencia-6-bandas.png')
+img4 = PhotoImage(file= 'Circuito-RS.png')
+img5 = PhotoImage(file= 'Circuito-RP.png')
+img6 = PhotoImage(file= 'Circuito-CS.png')
+img7 = PhotoImage(file= 'Circuito-CP.png')
+img8 = PhotoImage(file= 'Formula-RS.png')
+img9 = PhotoImage(file= 'Formula-RP.png')
+img10 = PhotoImage(file= 'Formula-CS.png')
+img11 = PhotoImage(file= 'Formula-CP.png')
+img12 = PhotoImage(file='Formula-RMaterial.png')
+img13 = PhotoImage(file='Formula-ResistividadM.png')
+
 lbl_img = Label(ventana, image = img)
 lbl_img.pack()
 
