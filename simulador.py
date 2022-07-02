@@ -108,14 +108,11 @@ def calculoColorResistencia4Colores():
     nuevaVentana.title('Calculo de los colores de la resistencia')
 
     #texto
-    lbl = Label(nuevaVentana, text='Primer color')
-    lbl.place(x=20,y=20)
-    lbl1 = Label(nuevaVentana, text='Segundo color')
-    lbl1.place(x=200,y=20)
-    lbl2= Label(nuevaVentana, text='Tercer color')
-    lbl2.place(x=400,y=20)
-    lbl3 = Label(nuevaVentana, text='Cuarto color')
-    lbl3.place(x=600,y=20)
+    Label(nuevaVentana, text='Primer color').place(x=20,y=20)
+    Label(nuevaVentana, text='Segundo color').place(x=200,y=20)
+    Label(nuevaVentana, text='Tercer color').place(x=400,y=20)
+    Label(nuevaVentana, text='Cuarto color').place(x=600,y=20)
+  
 
     #lista desplegable
     listaDesplegable = ttk.Combobox(nuevaVentana,width=10)
@@ -940,16 +937,11 @@ ventana.iconphoto(False, PhotoImage(file='icon.png'))
 Label(ventana, text='Menú').pack()
 
 #creacion de los botones
-btn = Button(ventana, text='Calculo de los colores de la resistencia', command=Opcion1)
-btn.pack(pady=20)
-btn1 = Button(ventana, text='Calculo de resistencia equivalente en serio/paralelo',command=Opcion2)
-btn1.pack(pady=20)
-btn2= Button(ventana, text='Calculo de la resistencia de un material', command= ResistenciaMaterial)
-btn2.pack(pady=20)
-btn4 = Button(ventana, text ="Calculo de la resistividad de un material", command = ResistividadMaterial)
-btn4.pack(pady=20)
-btn3 = Button(ventana, text= 'Calculo de capacidad equivalente condensador', command=Opcion4)
-btn3.pack(pady=20)
+Button(ventana, text='Calculo del codigo de los colores de la resistencia', command=Opcion1).pack(pady=20)
+Button(ventana, text='Calculo de resistencia equivalente en serio/paralelo',command=Opcion2).pack(pady=20)
+Button(ventana, text='Calculo de la resistencia de un material', command= ResistenciaMaterial).pack(pady=20)
+Button(ventana, text ="Calculo de la resistividad de un material", command = ResistividadMaterial).pack(pady=20)
+Button(ventana, text= 'Calculo de capacidad equivalente condensador', command=Opcion4).pack(pady=20)
 
 #importa el logo del dep. de fisica y otras
 img = PhotoImage(file='dfuls-logo.png')
