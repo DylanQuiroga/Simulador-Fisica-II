@@ -933,11 +933,11 @@ def Opcion4():
 # Inicio del programa -> creacion de la ventana
 ventana = Tk()
 ventana.geometry('640x480')
-ventana.title('Simulador Circuito')
+ventana.title('Ventana Principal')
 ventana.resizable(0,0)
 ventana.iconphoto(False, PhotoImage(file='icon.png'))
 
-Label(ventana, text='Menu').pack()
+Label(ventana, text='Menú').pack()
 
 #creacion de los botones
 btn = Button(ventana, text='Calculo de los colores de la resistencia', command=Opcion1)
