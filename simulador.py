@@ -611,7 +611,7 @@ def CalcularRParalelo(Resistencia1,Resistencia2,Resistencia3,Resistencia4,Resist
     Resultado = 1/(res1+res2+res3+res4+res5+res6+res7+res8+res9+res10)
     print(Resultado)
     Label(nuevaVentana,text="El valor de la resistencia es").place(x=100,y=180)
-    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="{:.3f}".format(Resultado)).place(x=300,y=180)
     Label(nuevaVentana,text="[Ω]").place(x=400,y=180)
 
 def CalculoRParalelo():
@@ -715,7 +715,7 @@ def CalcularCapacidadSerie(Capacidad1,Capacidad2, Capacidad3, Capacidad4, Capaci
     Resultado = 1/(Cap1+Cap2+Cap3+Cap4+Cap5+Cap6+Cap7+Cap8+Cap9+Cap10)
     print(Resultado)
     Label(nuevaVentana,text="La capacidad equivalente es").place(x=100,y=180)
-    Label(nuevaVentana,text=Resultado).place(x=300,y=180)
+    Label(nuevaVentana,text="{:.3f}".format(Resultado)).place(x=300,y=180)
     Label(nuevaVentana,text="[μF]").place(x=400,y=180)
 
 def CalculoCapacidadSerie():
@@ -782,7 +782,7 @@ def calculoresistenciaMaterial(RM,LM,AM,NV):
     print(resultado)
 
     Label(NV, text= "La resistencia del material es ").place(x=90,y=120)
-    Label(NV, text= resultado).place(x=350,y=120)
+    Label(NV, text= "{:.3f}".format(resultado)).place(x=350,y=120)
     Label(NV, text="[Ω]").place(x=450,y=120)
 
 def ResistenciaMaterial():
@@ -859,14 +859,14 @@ def CalculoCapacidadParalelo():
        
 def calculoresistividadMaterial(RM,LM,AM,NV):
     Label(NV, text='///////////////////////////////////////////////////////////////////////////////////////////').place(x=100,y=120)
-    multiplicacion = int(RM.get())*float(AM.get())
+    multiplicacion = float(RM.get())*float(AM.get())
     resultado = multiplicacion/float(LM.get())
 
     print(multiplicacion)
     print(resultado)
 
     Label(NV, text= "La resistividad del material es ").place(x=90,y=120)
-    Label(NV, text= resultado).place(x=350,y=120)
+    Label(NV, text= "{:.3f}".format(resultado)).place(x=350,y=120)
     Label(NV, text="[Ω*m]").place(x=450,y=120)
 
 def ResistividadMaterial():
@@ -877,7 +877,7 @@ def ResistividadMaterial():
     nuevaVentana.geometry('640x480')
     nuevaVentana.title('Calculo de la resistividad de un material')
 
-    resistenciaMaterial = TK.IntVar()
+    resistenciaMaterial = TK.DoubleVar()
     largoMaterial = TK.DoubleVar()
     areaMaterial = TK.DoubleVar()
 
