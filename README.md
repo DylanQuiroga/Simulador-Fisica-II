@@ -1,2 +1,3 @@
 # Simulador-Fisica-II
-Nota final para fisica II
+Este programa fue creado para la nota final de Fisica II.
+Al ejecutar el programa se habre una ventana dando 
